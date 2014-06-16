@@ -1,0 +1,32 @@
+/* ----------------------------------------------------
+   created with http://www.codeandweb.com/texturepacker 
+   ----------------------------------------------------
+   $TexturePacker:SmartUpdate:66aef265b28564f56cd87e803cbd0c52:f1bd524eb60db56bbe9fe8d66215e8c8:cab016450dc73d0d4d7ccfae05e20df9$
+   ----------------------------------------------------
+
+   usage: <span class="{-spritename-} sprite"></span>
+
+   replace {-spritename-} with the sprite you like to use
+
+*/
+
+.sprite {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(grassSprite.png);}
+
+.grass {width:70px; height:70px; background-position: -350px -140px}
+.grassCenter {width:70px; height:70px; background-position: -350px -70px}
+.grassCenter_rounded {width:70px; height:70px; background-position: -280px -140px}
+.grassCliffLeft {width:70px; height:70px; background-position: -280px -70px}
+.grassCliffLeftAlt {width:70px; height:70px; background-position: -350px -0px}
+.grassCliffRight {width:70px; height:70px; background-position: -280px -0px}
+.grassCliffRightAlt {width:70px; height:70px; background-position: -210px -140px}
+.grassHalf {width:70px; height:70px; background-position: -210px -70px}
+.grassHalfLeft {width:70px; height:70px; background-position: -210px -0px}
+.grassHalfMid {width:70px; height:70px; background-position: -140px -140px}
+.grassHalfRight {width:70px; height:70px; background-position: -140px -70px}
+.grassHillLeft {width:70px; height:70px; background-position: -140px -0px}
+.grassHillLeft2 {width:70px; height:70px; background-position: -70px -140px}
+.grassHillRight {width:70px; height:70px; background-position: -70px -70px}
+.grassHillRight2 {width:70px; height:70px; background-position: -70px -0px}
+.grassLeft {width:70px; height:70px; background-position: -0px -140px}
+.grassMid {width:70px; height:70px; background-position: -0px -70px}
+.grassRight {width:70px; height:70px; background-position: -0px -0px}
