@@ -9,8 +9,9 @@ function preload() {
     game.load.image('ground', '/img/grass.png');
     game.load.atlas('player', '/img/player/player.png', '/img/player/player.json');
 
+    game.load.image('tileset', '/img/grassSprite.png');
     game.load.tilemap('allmapandthat', '/map.json', null, Phaser.Tilemap.TILED_JSON);
-    game.load.image('tiles', '/img/grassSprite.png');
+
     // game.load.spritesheet('player', '/img/player/p1_walk_inline.png', 72, 92, 11);
     // game.load.spritesheet('player', '/img/player/dude.png', 32, 48);
     // game.load.image('player', '/img/player/p1_stand.png');
@@ -23,36 +24,36 @@ var map;
 var layer;
 
 function create() {
-    game.physics.startSystem(Phaser.Physics.ARCADE);
 
     // game.add.tileSprite(0, 0, 800, 600, 'background');
     var bg = game.add.sprite(0, 0, 'grasslands_bg');
     bg.scale.setTo(1, 1.1);
 
     map = game.add.tilemap('allmapandthat');
-    map.addTilesetImage('grassSprite', 'tiles');
-    map.setCollision([12, 13]);
-    layer = map.createLayer('platforms');
-
-    layer.debug = true;
-
+    map.addTilesetImage('tileset');
+    layer = map.createLayer('Tile Layer 1');
     layer.resizeWorld();
-    
-    platforms = game.add.group();
-    platforms.enableBody = true;
+    map.setCollision(1);
 
-    var ground;
-    for(var i = 0; i < 12; i++) {
-        ground = platforms.create(i * 70, game.world.height - 70, 'ground');
-        ground.body.immovable = true;
-    }
+    // layer.debug = true;
+
+    
+    game.physics.startSystem(Phaser.Physics.ARCADE);
+    // platforms = game.add.group();
+    // platforms.enableBody = true;
+
+    // var ground;
+    // for(var i = 0; i < 12; i++) {
+    //     ground = platforms.create(i * 70, game.world.height - 70, 'ground');
+    //     ground.body.immovable = true;
+    // }
     // TODO
     // ground.scale.setTo(800, 2);
 
-    var ledge = platforms.create(350, game.world.height - 140, 'ground');
-    ledge.body.immovable = true;
-    ledge = platforms.create(0, 250, 'ground');
-    ledge.body.immovable = true;
+    // var ledge = platforms.create(350, game.world.height - 140, 'ground');
+    // ledge.body.immovable = true;
+    // ledge = platforms.create(0, 250, 'ground');
+    // ledge.body.immovable = true;
 
     player = game.add.sprite(67, 92, 'player');
     game.physics.arcade.enable(player);
@@ -68,7 +69,8 @@ function create() {
 }
 
 function update() {
-    game.physics.arcade.collide(player, platforms);
+    // game.physics.arcade.collide(player, platforms);
+    this.physics.arcade.collide(player, layer);
 
     player.body.velocity.x = 0;
 
